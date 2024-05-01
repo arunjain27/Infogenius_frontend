@@ -1,0 +1,50 @@
+
+.head{
+    background:  linear-gradient(1.6deg, #169aa5 0.2%, rgb(237, 246, 250) 101.2%);
+ min-height: 50vh; 
+    display: flex;
+    justify-content: center;
+ 
+
+}
+
+.App{
+  margin-top: 120px;
+  
+  background: linear-gradient(to top, #358b93 0%, #eeeeee 100%);
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    width: 300px;
+   height: 100px;
+box-shadow: 2px 2px 3px rgb(5, 45, 70);
+
+    color: white;
+   
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+}
+.input{
+ 
+ font-size: 1.1em;    
+ 
+}
+input{
+    color: black;
+    font-weight: 600;
+border-radius: 5px;
+width: 250px;
+border: 1px solid black;
+}
+.form-button{
+margin-top:10px ;
+font-size: 1.1em;
+font-weight: 600;   
+margin: 5px;
+}

@@ -1,0 +1,18 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.signin{
+    border-radius: 10px;
+    width: 60%;
+    background:  linear-gradient(109.6deg, #b5e7ec 11.2%, rgb(237, 246, 250) 100.2%);
+    margin-left: 20%;
+    margin-top: 5%;
+}
+h2{
+    text-align: center;
+}
