@@ -1,0 +1,447 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  }
+  
+  /* Navbar section */
+  .c2 ul{
+    display: flex;
+    list-style-type: none;
+    color: black;
+  
+    /* border:  2px solid orange; */
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .big-c{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    /* border:  2px solid red; */
+     align-items: center;
+  }
+  .c1 a{
+    font-size: 40px;
+  }
+  
+  .c3{
+    display: flex;
+    /* border: 2px solid green; */
+  }
+  
+  .c3 button{
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-btn{
+    margin-left: 10px;
+    padding: 10px;
+    background-color: white;
+    text-transform: capitalize;
+  
+  }
+  .link-login{
+    font-weight: 400;
+    margin-left: 10px;
+    padding: 8px 10px ;
+    border-radius: 4px;
+    color: rgb(255, 101, 45);
+    border: 2px solid  rgb(255, 101, 45);
+  
+  }
+  
+  .register-btn{
+    margin-left:25%;
+    padding: 8px 10px;
+   
+    
+    background-color: rgb(255, 101, 45);
+    border-radius: 4px;
+  }
+  
+  
+  .c2 ul a{
+    
+    text-decoration: none;
+    padding-left: 20px;
+    color: black;
+  }
+  
+  
+  /* Hero section */
+  .container{
+    /* border: 2px solid; */
+    text-align: center;
+    margin: 20px;
+    padding: 100px;
+  }
+  
+  .container h1{
+    font-size: 60px;
+    padding-bottom: 15px;
+  }
+  .container h4{
+    font-size: 20px;
+    color: grey;
+  }
+  .btn-b{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    /* border: 2px solid; */
+    font-size: 21px;
+    margin: 10px;
+    
+    
+  }
+  .btn1{
+    /* border: 2px solid ; */
+    margin-right: 20px;
+    padding: 10px;
+  }
+  .color{
+    background-color: rgb(255, 101, 45);
+    color: white;
+    border-radius: 4px;
+  }
+  
+  /* feactures section */
+  
+  .features_container{
+    /* border:2px solid red; */
+    text-align: center;
+    background-color: #5D576B;
+    color: white;
+    padding: 3% 5%;
+   
+  }
+  
+  .features_box{
+    /* border: 2px solid green; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2%;
+  }
+  
+  .features_heading{
+   font-size: 2.5rem;
+   margin-bottom: 1%;
+  } 
+  
+  .features_sub_heading{
+    font-size: larger;
+  }
+  
+  .list_Box{
+    /* border:  2px solid yellow; */
+    padding: 6% 7%;
+    text-align: left;
+    margin:2%;
+    background-color: #6a6478;
+    
+  }
+  
+  .list_Box p{
+    /* border: 2px solid red; */
+    width: 110%;
+     margin-top: 4%; 
+     font-size: 1rem;
+     letter-spacing: 2px;
+     font-weight: bold;
+     line-height: 1rem;
+    
+  }
+  
+  
+  /* price title */
+  .price-upper-box{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .price-title{
+    font-size: 17px;
+    font-weight: 700;
+    padding: 10px;
+  }
+  .plan{
+    font-size: 40px;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-top: 4%;
+  }
+  .plan-subtitle{
+    font-size: 26px; 
+  }
+  
+  /* card */
+  .card-outer-box{
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: space-evenly;
+    
+  }
+  
+  /* pricing list */
+  
+  
+  .price-box{
+    /* border: 2px solid green; */
+    background-color: rgb(217, 249, 217);
+    width: 300px;
+    padding: 25px;
+    margin-top: 20px;
+    margin-left: 5px;
+    height: fit-content;
+  }
+  
+  .price-box h2{
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  .price-cont{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  .price-amt{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  .price-desc1{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  .price-box button{
+    /* border: 2px solid red; */
+    background-color: rgb(255, 101, 45);
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  
+  /* Empower section */
+  
+  .empower_section{
+    /* border: 2px solid red; */
+    text-align: center;
+    padding: 5% 8%;
+  }
+  
+  .empower_section h1{
+    font-size: 3rem;
+    margin-bottom: 3%;
+  }
+  
+  .empower_section p{
+    font-size: 1.3rem;
+    margin-bottom: 3%;
+  }
+  
+  .btn{
+    padding: 1% 2.5%;
+    font-size: 1.5rem;
+    background-color: rgb(255, 101, 45);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn:hover{
+    background-color: white;
+    color: rgb(255, 101, 45);
+    border: 1px solid rgb(255, 101, 45);
+  }
+  /* FAQ section */
+  
+  .quetions_section
+  {
+    background-color: rgb(217, 249, 217);
+    display:  flex;
+    padding: 3%;
+  }
+  
+  .common_question{
+    width: 44%;
+    margin-right: 4%;
+    /* border: 2px solid black; */
+  }
+  .common_question span{ 
+    font-weight: bold;
+  }
+  .common_question h1{ 
+    margin: 5% 0;
+    font-size: 2.4rem;
+  
+  }
+  .common_question h4{ 
+    margin: 5% 0;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  
+  .QuestionList{
+    /* border: 2px solid red; */
+    padding: 0 2%;
+  }
+  
+  
+  .Quesion_ans{
+    /* border: 2px solid green; */
+  margin-bottom: 2%;
+  }
+  
+  .Quesion_ans h2{
+    margin-bottom: 2%;
+    font-weight: 600;
+  }
+  
+  .Quesion_ans p{
+    font-size: 1.2rem;
+  
+  
+  }
+  
+  
+  /* Footer_section */
+  
+  .Footer_section{
+    /* border: 2px solid red; */
+    text-align: center;
+    padding: 4%;
+  }
+  .Footer_section h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Footer_section ul{
+    /* border: 2px solid green; */
+    display: flex;
+    margin: 3% auto;
+    justify-content: space-around;
+    list-style: none;
+    width: 40%;
+  }
+  
+  .horizontal_line{
+    border-bottom: 1px solid rgb(145, 145, 145);
+    /* margin-bottom: 3%; */
+    margin: 3% auto;
+   
+  }
+  .links_copyrights{
+    /* border: 2px solid black; */
+    display: flex;
+  
+    margin: auto;
+    justify-content: space-between;
+  
+  }
+  
+  .links{
+    /* border: 2px solid red; */
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  .links img{
+    width: 25px;
+    height: 25px;
+  }
+  
+  
+  /* Login page css */
+  
+  .Form-container{
+    display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100vw; 
+  height: 100vh; 
+  /* background-color: #E5E7EB;  */
+  }
+  
+  .sub-form-container{
+    padding: 3rem; 
+  border-radius: 0.125rem; 
+  border-top-width: 8px; 
+  /* border-color: #4F46E5;  */
+  width: 24rem; 
+  background-color: #ffffff; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+  }
+  
+  .login-heading{
+    display: block; 
+  font-size: 1.5rem;
+  line-height: 2rem; 
+  font-weight: 700; 
+  text-align: center; 
+  }
+  .input-container{
+  display: block; 
+  width:100%;
+  margin-top: 0.75rem; 
+  color: #6B7280; 
+  }
+  .input-style{
+    padding-top: 0.75rem;
+  padding-bottom: 0.75rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  margin-top: 0.25rem; 
+  border-radius: 0.25rem; 
+  border-width: 1px; 
+  border-color: #E5E7EB; 
+  width: 100%; 
+  color: #111827; 
+  background-color: #ffffff; 
+  }
+  .submit-btn{
+    display: block; 
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  margin-top: 1.5rem; 
+  border-radius: 0.25rem; 
+  width: 100%; 
+  font-weight: 700; 
+  color: #ffffff; 
+  background-image: linear-gradient(to right, var(--tw-gradient-stops)); 
+  background-color: rgb(255, 125, 78) ;
+  /* background-color: #A78BFA;  */
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms; 
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms; 
+  cursor: pointer; 
+  outline: none;
+  border: none;
+  
+  }
+  
+  .submit-btn:hover {
+   background-color:rgb(255, 101, 45); ; 
+  /* background-color: #8B5CF6;  */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+   }

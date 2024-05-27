@@ -1,71 +1,81 @@
-// App.js (assuming this is your sign-up component)
-import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { MDBContainer, MDBInput, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-import '../css/Signin.css';
 
-function App() {
+import '../App.css'
+
+const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  // Inside your React component where you handle sign-up
-  const navigate = useNavigate();
-const handleSignUp = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://localhost:5000/signup', { name, email, password });
-    
-    // Check if signup was successful
-    if (response.data.success) {
-      alert("successfully Sign Up");
-      navigate('/');
-    
-      // ... (redirect the user or perform other actions as needed)
-    } else {
-      alert("please sign up the correct details");
-      // ... (handle signup failure)
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:5000/signup', { name, email, password });
+
+      // Check if signup was successful
+      if (response.data.token) {
+        localStorage.setItem('token', response.data.token);
+        // Redirect the user to home page
+        window.location.href = '/';
+      } else {
+        setError(response.data.message);
+      }
+    } catch (error) {
+      console.error('Error signing up:', error);
+      setError('Error signing up. Please try again later.');
     }
-  } catch (error) {
-    console.error('Error signing up:', error);
-    localStorage.setItem('isSignedUp', 'false');
-  }
-};
-
+  };
 
   return (
-    <div className='signin'>
-      <h2>Sign Up</h2>
-      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+    <div className="Form-container">
+      <div className="sub-form-container">
+        <h1 className="login-heading">New Register</h1>
         <form onSubmit={handleSignUp}>
-          <MDBInput
-            wrapperClass='mb-4'
-            label='Name'
-            id='form1'
-            type='text'
+        <label  style={{color:'grey', fontSize:'1rem' ,marginTop:'10px'}}>Name</label>
+          <input
+          style={{width:'100%',height:'35px',marginTop:'5px'}}
+            type="text"
+            id="name"
+            name="name"
+            label="Name"
+            placeholder="Your Name"
             onChange={(e) => setName(e.target.value)}
+            required
           />
-          <MDBInput
-            wrapperClass='mb-4'
-            label='Email address'
-            id='form2'
-            type='email'
+         <label  style={{color:'grey', fontSize:'1rem' ,marginTop:'10px'}}>Email address</label>
+          <input
+          style={{width:'100%',height:'35px',marginTop:'5px'}}
+            type="email"
+            id="email"
+            name="email"
+            label="Email Address"
+            placeholder="me@example.com"
             onChange={(e) => setEmail(e.target.value)}
+            required
+            autoFocus
           />
-          <MDBInput
-            wrapperClass='mb-4'
-            label='Password'
-            id='form3'
-            type='password'
+        <label  style={{color:'grey', fontSize:'1rem' ,marginTop:'10px'}}>Password</label>
+          <input
+          style={{width:'100%',height:'35px',marginTop:'5px'}}
+            type="password"
+            id="password"
+            name="password"
+            label="Password"
+            placeholder="••••••••••"
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
-          <MDBBtn className="mb-4" type="submit">Sign Up</MDBBtn>
+          {error && <p className="error-message">{error}</p>}
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
         </form>
-        {/* ...rest of your code */}
-      </MDBContainer>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Register;

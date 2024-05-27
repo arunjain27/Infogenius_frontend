@@ -1,18 +1,18 @@
 
 .head{
-    background:  linear-gradient(1.6deg, #169aa5 0.2%, rgb(237, 246, 250) 101.2%);
- min-height: 50vh; 
+    background-color: #ececef;
+     min-height: 50vh; 
     display: flex;
     justify-content: center;
  
-
+color: #06063f;
 }
 
 .App{
   margin-top: 120px;
   
-  background: linear-gradient(to top, #358b93 0%, #eeeeee 100%);
-    display: flex;
+  background-color: #aaaab1;
+  display: flex;
     justify-content: center;
    align-items: center;
     width: 300px;

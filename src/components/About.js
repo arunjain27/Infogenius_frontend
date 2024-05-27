@@ -1,7 +1,6 @@
 // About.js
 import React from 'react';
 import '../css/About.css'; // Importing CSS file for styling
-import Footer from '../components/Footer'
 const About = () => {
   return (
     <div className="about-container">
@@ -24,7 +23,7 @@ const About = () => {
    
    
    
-   <div className='footer'> <Footer/></div>
+   
  
     </div>
   );

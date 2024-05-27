@@ -1,106 +1,80 @@
-// App.js
-import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import axios from 'axios';
-import {
-  MDBContainer,
-  MDBInput,
-  MDBCheckbox,
-  MDBBtn,
-  MDBIcon
-} from 'mdb-react-ui-kit';
-import '../css/Signin.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "../App.css";
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-function App() {
- 
-  
- // Inside your React component where you handle sign-in
- const navigate = useNavigate();
-const handleSignIn = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://localhost:5000/signin', { email, password });
-    
-    // Check if login was successful
-    if (response.data.success) {
-     
-      
-      navigate('/');      
-      // ... (redirect the user or perform other actions as needed)
-    } else {
-    
-      
-      // ... (handle login failure)
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(email, password);
+      const response = await axios.post("http://localhost:5000/signin", {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        // Authentication successful, handle further actions
+        localStorage.setItem("token", response.data.token);
+        console.log("Login successful");
+        window.location.replace("/");
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      setError("Error logging in. Please try again later.");
     }
-  } catch (error) {
-    console.error('Error signing in:', error);
-    localStorage.setItem('isLoggedIn', 'false');
-  }
-};
-
- 
- 
- 
- 
- 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+  };
 
   return (
-    <div className='signin'>
-      <h2>Sign In</h2>
-      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-        <form onSubmit={handleSignIn}>
-          <MDBInput
-            wrapperClass='mb-4'
-            label='Email address'
-            id='form1'
-            type='email'
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <MDBInput
-            wrapperClass='mb-4'
-            label='Password'
-            id='form2'
-            type='password'
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <div className="d-flex justify-content-between mx-3 mb-4">
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="#!">Forgot password?</a>
-          </div>
-
-          <MDBBtn className="mb-4" type="submit">Sign in</MDBBtn>
-    
-        </form>
-
-        <div className="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
-          <p>or sign up with:</p>
-
-          <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
-            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='facebook-f' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='twitter' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='google' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='github' size="sm"/>
-            </MDBBtn>
-          </div>
+    <>
+      <div className="Form-container">
+        <div className="sub-form-container">
+          <h1 className="login-heading">Log In</h1>
+          <form onSubmit={handleLogin}>
+            <label style={{ color: "grey", fontSize: "1rem" }}>
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              label="Email Address"
+              placeholder="me@example.com"
+              autofocus={true}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ width: "100%", height: "35px" }}
+            />
+            <label
+              style={{ color: "grey", fontSize: "1rem", marginTop: "10px" }}
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              label="Password"
+              placeholder="••••••••••"
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: "100%", height: "35px", marginTop: "5px" }}
+            />
+            <button
+              className="submit-btn"
+              type="submit"
+              style={{ textDecoration: "none" }}
+            >
+              Submit
+            </button>
+          </form>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
-      </MDBContainer>
-    </div>
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export default Login;
